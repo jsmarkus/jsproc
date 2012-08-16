@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+require('coffee-script');
+var fs = require('fs');
+var argv = require('optimist').argv;
+var jsproc = require('../jsproc');
+
+
+var iFile = argv._[0];
+var oFile = argv._[1];
+
+var input = fs.readFileSync(iFile, 'utf8');
+jsproc(input, function (output) {
+	if(oFile)
+	{
+		fs.writeFileSync(oFile, output, 'utf8');
+	}
+	else
+	{
+		console.log(output);
+	}
+});

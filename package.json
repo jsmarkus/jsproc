@@ -1,0 +1,8 @@
+{
+	"name" : "jsproc"
+	, "version" : "0.0.1"
+	, "bin" : "./bin/jsproc"
+	, "dependencies" : {
+		"optimist" : "*"
+	}
+}
